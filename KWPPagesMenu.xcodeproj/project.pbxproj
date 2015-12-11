@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB194CB11C191DFD0085E220 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CB01C191DFD0085E220 /* main.m */; };
+		DB194CB41C191DFD0085E220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CB31C191DFD0085E220 /* AppDelegate.m */; };
+		DB194CB71C191DFD0085E220 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CB61C191DFD0085E220 /* ViewController.m */; };
+		DB194CBA1C191DFD0085E220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB194CB81C191DFD0085E220 /* Main.storyboard */; };
+		DB194CBC1C191DFD0085E220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB194CBB1C191DFD0085E220 /* Assets.xcassets */; };
+		DB194CBF1C191DFD0085E220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB194CBD1C191DFD0085E220 /* LaunchScreen.storyboard */; };
+		DB194CCA1C191DFE0085E220 /* KWPPagesMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CC91C191DFE0085E220 /* KWPPagesMenuTests.m */; };
+		DB194CD51C191DFE0085E220 /* KWPPagesMenuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CD41C191DFE0085E220 /* KWPPagesMenuUITests.m */; };
+		DB194CE51C191E720085E220 /* KWPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CE41C191E720085E220 /* KWPRootViewController.m */; };
+		DB194CE81C1922160085E220 /* UIViewController+KWPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CE71C1922160085E220 /* UIViewController+KWPRootViewController.m */; };
+		DB194CF31C193F8C0085E220 /* KWPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CF21C193F8C0085E220 /* KWPMainViewController.m */; };
+		DB194CF61C193FB80085E220 /* KWPPagesMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CF51C193FB80085E220 /* KWPPagesMenuViewController.m */; };
+		DB61B8091C1ABC170081F311 /* PageSubViewA.m in Sources */ = {isa = PBXBuildFile; fileRef = DB61B8081C1ABC170081F311 /* PageSubViewA.m */; };
+		DB61B80C1C1ABC2A0081F311 /* PageSubViewB.m in Sources */ = {isa = PBXBuildFile; fileRef = DB61B80B1C1ABC2A0081F311 /* PageSubViewB.m */; };
+		DB61B80F1C1ABC390081F311 /* PageSubViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB61B80E1C1ABC390081F311 /* PageSubViewC.m */; };
+		DB61B8121C1ABC450081F311 /* PageSubViewD.m in Sources */ = {isa = PBXBuildFile; fileRef = DB61B8111C1ABC450081F311 /* PageSubViewD.m */; };
+		DB61B8151C1ABC540081F311 /* PageSubViewE.m in Sources */ = {isa = PBXBuildFile; fileRef = DB61B8141C1ABC540081F311 /* PageSubViewE.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB194CC61C191DFE0085E220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB194CA41C191DFD0085E220 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB194CAB1C191DFD0085E220;
+			remoteInfo = KWPPagesMenu;
+		};
+		DB194CD11C191DFE0085E220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB194CA41C191DFD0085E220 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB194CAB1C191DFD0085E220;
+			remoteInfo = KWPPagesMenu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB194CAC1C191DFD0085E220 /* KWPPagesMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KWPPagesMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB194CB01C191DFD0085E220 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB194CB21C191DFD0085E220 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB194CB31C191DFD0085E220 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB194CB51C191DFD0085E220 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DB194CB61C191DFD0085E220 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB194CB91C191DFD0085E220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB194CBB1C191DFD0085E220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB194CBE1C191DFD0085E220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB194CC01C191DFD0085E220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB194CC51C191DFE0085E220 /* KWPPagesMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KWPPagesMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB194CC91C191DFE0085E220 /* KWPPagesMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KWPPagesMenuTests.m; sourceTree = "<group>"; };
+		DB194CCB1C191DFE0085E220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB194CD01C191DFE0085E220 /* KWPPagesMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KWPPagesMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB194CD41C191DFE0085E220 /* KWPPagesMenuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KWPPagesMenuUITests.m; sourceTree = "<group>"; };
+		DB194CD61C191DFE0085E220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB194CE31C191E720085E220 /* KWPRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWPRootViewController.h; sourceTree = "<group>"; };
+		DB194CE41C191E720085E220 /* KWPRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWPRootViewController.m; sourceTree = "<group>"; };
+		DB194CE61C1922160085E220 /* UIViewController+KWPRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KWPRootViewController.h"; sourceTree = "<group>"; };
+		DB194CE71C1922160085E220 /* UIViewController+KWPRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KWPRootViewController.m"; sourceTree = "<group>"; };
+		DB194CE91C1922410085E220 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DB194CF11C193F8C0085E220 /* KWPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWPMainViewController.h; sourceTree = "<group>"; };
+		DB194CF21C193F8C0085E220 /* KWPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWPMainViewController.m; sourceTree = "<group>"; };
+		DB194CF41C193FB80085E220 /* KWPPagesMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWPPagesMenuViewController.h; sourceTree = "<group>"; };
+		DB194CF51C193FB80085E220 /* KWPPagesMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWPPagesMenuViewController.m; sourceTree = "<group>"; };
+		DB61B8071C1ABC170081F311 /* PageSubViewA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageSubViewA.h; sourceTree = "<group>"; };
+		DB61B8081C1ABC170081F311 /* PageSubViewA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageSubViewA.m; sourceTree = "<group>"; };
+		DB61B80A1C1ABC2A0081F311 /* PageSubViewB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageSubViewB.h; sourceTree = "<group>"; };
+		DB61B80B1C1ABC2A0081F311 /* PageSubViewB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageSubViewB.m; sourceTree = "<group>"; };
+		DB61B80D1C1ABC390081F311 /* PageSubViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageSubViewC.h; sourceTree = "<group>"; };
+		DB61B80E1C1ABC390081F311 /* PageSubViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageSubViewC.m; sourceTree = "<group>"; };
+		DB61B8101C1ABC450081F311 /* PageSubViewD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageSubViewD.h; sourceTree = "<group>"; };
+		DB61B8111C1ABC450081F311 /* PageSubViewD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageSubViewD.m; sourceTree = "<group>"; };
+		DB61B8131C1ABC540081F311 /* PageSubViewE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageSubViewE.h; sourceTree = "<group>"; };
+		DB61B8141C1ABC540081F311 /* PageSubViewE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageSubViewE.m; sourceTree = "<group>"; };
+		DB61B8161C1ABD9B0081F311 /* PageSubViewHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageSubViewHeaders.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB194CA91C191DFD0085E220 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB194CC21C191DFE0085E220 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB194CCD1C191DFE0085E220 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB194CA31C191DFD0085E220 = {
+			isa = PBXGroup;
+			children = (
+				DB194CAE1C191DFD0085E220 /* KWPPagesMenu */,
+				DB194CC81C191DFE0085E220 /* KWPPagesMenuTests */,
+				DB194CD31C191DFE0085E220 /* KWPPagesMenuUITests */,
+				DB194CAD1C191DFD0085E220 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB194CAD1C191DFD0085E220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB194CAC1C191DFD0085E220 /* KWPPagesMenu.app */,
+				DB194CC51C191DFE0085E220 /* KWPPagesMenuTests.xctest */,
+				DB194CD01C191DFE0085E220 /* KWPPagesMenuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB194CAE1C191DFD0085E220 /* KWPPagesMenu */ = {
+			isa = PBXGroup;
+			children = (
+				DB194CF01C193F680085E220 /* ContainViewControllers */,
+				DB194CE21C191E130085E220 /* RootViewController */,
+				DB194CB21C191DFD0085E220 /* AppDelegate.h */,
+				DB194CB31C191DFD0085E220 /* AppDelegate.m */,
+				DB194CB51C191DFD0085E220 /* ViewController.h */,
+				DB194CB61C191DFD0085E220 /* ViewController.m */,
+				DB194CB81C191DFD0085E220 /* Main.storyboard */,
+				DB194CBB1C191DFD0085E220 /* Assets.xcassets */,
+				DB194CBD1C191DFD0085E220 /* LaunchScreen.storyboard */,
+				DB194CC01C191DFD0085E220 /* Info.plist */,
+				DB194CAF1C191DFD0085E220 /* Supporting Files */,
+			);
+			path = KWPPagesMenu;
+			sourceTree = "<group>";
+		};
+		DB194CAF1C191DFD0085E220 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB194CB01C191DFD0085E220 /* main.m */,
+				DB194CE91C1922410085E220 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB194CC81C191DFE0085E220 /* KWPPagesMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB194CC91C191DFE0085E220 /* KWPPagesMenuTests.m */,
+				DB194CCB1C191DFE0085E220 /* Info.plist */,
+			);
+			path = KWPPagesMenuTests;
+			sourceTree = "<group>";
+		};
+		DB194CD31C191DFE0085E220 /* KWPPagesMenuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB194CD41C191DFE0085E220 /* KWPPagesMenuUITests.m */,
+				DB194CD61C191DFE0085E220 /* Info.plist */,
+			);
+			path = KWPPagesMenuUITests;
+			sourceTree = "<group>";
+		};
+		DB194CE21C191E130085E220 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB194CE61C1922160085E220 /* UIViewController+KWPRootViewController.h */,
+				DB194CE71C1922160085E220 /* UIViewController+KWPRootViewController.m */,
+				DB194CE31C191E720085E220 /* KWPRootViewController.h */,
+				DB194CE41C191E720085E220 /* KWPRootViewController.m */,
+			);
+			name = RootViewController;
+			sourceTree = "<group>";
+		};
+		DB194CF01C193F680085E220 /* ContainViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB61B8061C1ABBE60081F311 /* PageSubViews */,
+				DB194CF11C193F8C0085E220 /* KWPMainViewController.h */,
+				DB194CF21C193F8C0085E220 /* KWPMainViewController.m */,
+				DB194CF41C193FB80085E220 /* KWPPagesMenuViewController.h */,
+				DB194CF51C193FB80085E220 /* KWPPagesMenuViewController.m */,
+			);
+			name = ContainViewControllers;
+			sourceTree = "<group>";
+		};
+		DB61B8061C1ABBE60081F311 /* PageSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				DB61B8071C1ABC170081F311 /* PageSubViewA.h */,
+				DB61B8081C1ABC170081F311 /* PageSubViewA.m */,
+				DB61B80A1C1ABC2A0081F311 /* PageSubViewB.h */,
+				DB61B80B1C1ABC2A0081F311 /* PageSubViewB.m */,
+				DB61B80D1C1ABC390081F311 /* PageSubViewC.h */,
+				DB61B80E1C1ABC390081F311 /* PageSubViewC.m */,
+				DB61B8101C1ABC450081F311 /* PageSubViewD.h */,
+				DB61B8111C1ABC450081F311 /* PageSubViewD.m */,
+				DB61B8131C1ABC540081F311 /* PageSubViewE.h */,
+				DB61B8141C1ABC540081F311 /* PageSubViewE.m */,
+				DB61B8161C1ABD9B0081F311 /* PageSubViewHeaders.h */,
+			);
+			name = PageSubViews;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB194CAB1C191DFD0085E220 /* KWPPagesMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB194CD91C191DFE0085E220 /* Build configuration list for PBXNativeTarget "KWPPagesMenu" */;
+			buildPhases = (
+				DB194CA81C191DFD0085E220 /* Sources */,
+				DB194CA91C191DFD0085E220 /* Frameworks */,
+				DB194CAA1C191DFD0085E220 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KWPPagesMenu;
+			productName = KWPPagesMenu;
+			productReference = DB194CAC1C191DFD0085E220 /* KWPPagesMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB194CC41C191DFE0085E220 /* KWPPagesMenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB194CDC1C191DFE0085E220 /* Build configuration list for PBXNativeTarget "KWPPagesMenuTests" */;
+			buildPhases = (
+				DB194CC11C191DFE0085E220 /* Sources */,
+				DB194CC21C191DFE0085E220 /* Frameworks */,
+				DB194CC31C191DFE0085E220 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB194CC71C191DFE0085E220 /* PBXTargetDependency */,
+			);
+			name = KWPPagesMenuTests;
+			productName = KWPPagesMenuTests;
+			productReference = DB194CC51C191DFE0085E220 /* KWPPagesMenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB194CCF1C191DFE0085E220 /* KWPPagesMenuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB194CDF1C191DFE0085E220 /* Build configuration list for PBXNativeTarget "KWPPagesMenuUITests" */;
+			buildPhases = (
+				DB194CCC1C191DFE0085E220 /* Sources */,
+				DB194CCD1C191DFE0085E220 /* Frameworks */,
+				DB194CCE1C191DFE0085E220 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB194CD21C191DFE0085E220 /* PBXTargetDependency */,
+			);
+			name = KWPPagesMenuUITests;
+			productName = KWPPagesMenuUITests;
+			productReference = DB194CD01C191DFE0085E220 /* KWPPagesMenuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB194CA41C191DFD0085E220 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = KWP;
+				TargetAttributes = {
+					DB194CAB1C191DFD0085E220 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = M69B7MK4BC;
+					};
+					DB194CC41C191DFE0085E220 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = DB194CAB1C191DFD0085E220;
+					};
+					DB194CCF1C191DFE0085E220 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = DB194CAB1C191DFD0085E220;
+					};
+				};
+			};
+			buildConfigurationList = DB194CA71C191DFD0085E220 /* Build configuration list for PBXProject "KWPPagesMenu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB194CA31C191DFD0085E220;
+			productRefGroup = DB194CAD1C191DFD0085E220 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB194CAB1C191DFD0085E220 /* KWPPagesMenu */,
+				DB194CC41C191DFE0085E220 /* KWPPagesMenuTests */,
+				DB194CCF1C191DFE0085E220 /* KWPPagesMenuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB194CAA1C191DFD0085E220 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB194CBF1C191DFD0085E220 /* LaunchScreen.storyboard in Resources */,
+				DB194CBC1C191DFD0085E220 /* Assets.xcassets in Resources */,
+				DB194CBA1C191DFD0085E220 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB194CC31C191DFE0085E220 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB194CCE1C191DFE0085E220 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB194CA81C191DFD0085E220 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB61B8151C1ABC540081F311 /* PageSubViewE.m in Sources */,
+				DB194CB71C191DFD0085E220 /* ViewController.m in Sources */,
+				DB61B8121C1ABC450081F311 /* PageSubViewD.m in Sources */,
+				DB194CB41C191DFD0085E220 /* AppDelegate.m in Sources */,
+				DB194CF61C193FB80085E220 /* KWPPagesMenuViewController.m in Sources */,
+				DB194CE81C1922160085E220 /* UIViewController+KWPRootViewController.m in Sources */,
+				DB61B8091C1ABC170081F311 /* PageSubViewA.m in Sources */,
+				DB194CB11C191DFD0085E220 /* main.m in Sources */,
+				DB61B80C1C1ABC2A0081F311 /* PageSubViewB.m in Sources */,
+				DB194CF31C193F8C0085E220 /* KWPMainViewController.m in Sources */,
+				DB61B80F1C1ABC390081F311 /* PageSubViewC.m in Sources */,
+				DB194CE51C191E720085E220 /* KWPRootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB194CC11C191DFE0085E220 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB194CCA1C191DFE0085E220 /* KWPPagesMenuTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB194CCC1C191DFE0085E220 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB194CD51C191DFE0085E220 /* KWPPagesMenuUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB194CC71C191DFE0085E220 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB194CAB1C191DFD0085E220 /* KWPPagesMenu */;
+			targetProxy = DB194CC61C191DFE0085E220 /* PBXContainerItemProxy */;
+		};
+		DB194CD21C191DFE0085E220 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB194CAB1C191DFD0085E220 /* KWPPagesMenu */;
+			targetProxy = DB194CD11C191DFE0085E220 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB194CB81C191DFD0085E220 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB194CB91C191DFD0085E220 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB194CBD1C191DFD0085E220 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB194CBE1C191DFD0085E220 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB194CD71C191DFE0085E220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DB194CD81C191DFE0085E220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB194CDA1C191DFE0085E220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = KWPPagesMenu/PrefixHeader.pch;
+				INFOPLIST_FILE = KWPPagesMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kwp.KWPPagesMenu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DB194CDB1C191DFE0085E220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = KWPPagesMenu/PrefixHeader.pch;
+				INFOPLIST_FILE = KWPPagesMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kwp.KWPPagesMenu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DB194CDD1C191DFE0085E220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KWPPagesMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kwp.KWPPagesMenuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KWPPagesMenu.app/KWPPagesMenu";
+			};
+			name = Debug;
+		};
+		DB194CDE1C191DFE0085E220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KWPPagesMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kwp.KWPPagesMenuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KWPPagesMenu.app/KWPPagesMenu";
+			};
+			name = Release;
+		};
+		DB194CE01C191DFE0085E220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KWPPagesMenuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kwp.KWPPagesMenuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KWPPagesMenu;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DB194CE11C191DFE0085E220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KWPPagesMenuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kwp.KWPPagesMenuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KWPPagesMenu;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB194CA71C191DFD0085E220 /* Build configuration list for PBXProject "KWPPagesMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB194CD71C191DFE0085E220 /* Debug */,
+				DB194CD81C191DFE0085E220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB194CD91C191DFE0085E220 /* Build configuration list for PBXNativeTarget "KWPPagesMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB194CDA1C191DFE0085E220 /* Debug */,
+				DB194CDB1C191DFE0085E220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB194CDC1C191DFE0085E220 /* Build configuration list for PBXNativeTarget "KWPPagesMenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB194CDD1C191DFE0085E220 /* Debug */,
+				DB194CDE1C191DFE0085E220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB194CDF1C191DFE0085E220 /* Build configuration list for PBXNativeTarget "KWPPagesMenuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB194CE01C191DFE0085E220 /* Debug */,
+				DB194CE11C191DFE0085E220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB194CA41C191DFD0085E220 /* Project object */;
+}
