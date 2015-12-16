@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol KWPMainViewDelegate <NSObject>
+
+-(CGRect)viewSize;
+
+@end
+
 @interface KWPMainViewController : UIViewController
+
+@property (strong, nonatomic) UIViewController *contentViewController;
+@property (weak, nonatomic) UIView *contentView;
+@property (weak, nonatomic) id<KWPMainViewDelegate> contentDelegate;
 
 @end

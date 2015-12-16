@@ -8,6 +8,7 @@
 
 #import "KWPRootViewController.h"
 #import "KWPPagesMenuViewController.h"
+#import "KWPMainViewController.h"
 
 @interface KWPRootViewController ()
 {
@@ -16,6 +17,10 @@
     CGRect originalContentFrame;
     
     UIView* mainViewSnapShot;
+    
+    UIView* subViewsSnapshot;
+    
+    UIView* mainViewBackGroundView;
 
 }
 @end
@@ -36,6 +41,21 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (!self.selectedPageNum) {
+        self.selectedPageNum = 0;
+    }
+    [self setContentInMainView];
+}
+
+-(void)setContentInMainView
+{
+    KWPMainViewController *mainViewCV = (KWPMainViewController*)self.mainPageController;
+    KWPPagesMenuViewController *pagesMenuCV = (KWPPagesMenuViewController*)self.pagesMenuController;
+    mainViewCV.contentViewController = [pagesMenuCV.pageViews objectAtIndex:self.selectedPageNum];
 }
 
 #pragma mark -
@@ -65,7 +85,7 @@
 - (CGFloat) totalPer
 {
     if (_totalPer == NonValue) {
-        _totalPer = 9;
+        _totalPer = 1;
     }
     
     return _totalPer;
@@ -83,7 +103,7 @@
 - (CGFloat) maxMenuPer
 {
     if (_maxMenuPer == NonValue) {
-        _maxMenuPer = 9;
+        _maxMenuPer = _totalPer;
     }
     
     return _maxMenuPer;
@@ -146,6 +166,11 @@
     //    NSLog(@" Content %@",NSStringFromCGRect(_contentController.view.frame));
     _pagesMenuController.view.clipsToBounds = YES;
     
+    // シングルタップ
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(menuTapGesture:)];
+    [_pagesMenuController.view addGestureRecognizer:tapGesture];
+    
+    
     [self.view addSubview:_pagesMenuController.view];
     [_pagesMenuController didMoveToParentViewController:self];
     
@@ -168,17 +193,17 @@
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer
 {
     
-    NSLog(@" menuView %@",NSStringFromCGRect(self.mainPageController.view.frame));
+//    NSLog(@" menuView %@",NSStringFromCGRect(self.mainPageController.view.frame));
     
-    NSLog(@" contentView %@",NSStringFromCGRect(self.pagesMenuController.view.frame));
+//    NSLog(@" contentView %@",NSStringFromCGRect(self.pagesMenuController.view.frame));
     
     CGPoint location = [recognizer locationInView:self.view];
     if (CGRectContainsPoint(self.pagesMenuController.view.frame, location)) {
-        NSLog(@"self.menuView contain ||| location → %@ ", NSStringFromCGPoint(location));
+//        NSLog(@"self.menuView contain ||| location → %@ ", NSStringFromCGPoint(location));
     }else if (CGRectContainsPoint(self.mainPageController.view.frame, location)) {
-        NSLog(@"self.contentView contain ||| location → %@ ", NSStringFromCGPoint(location));
+//        NSLog(@"self.contentView contain ||| location → %@ ", NSStringFromCGPoint(location));
     }else{
-        NSLog(@"not contain location → %@ ", NSStringFromCGPoint(location));
+//        NSLog(@"not contain location → %@ ", NSStringFromCGPoint(location));
     }
     
     CGPoint point = [recognizer translationInView:self.view];
@@ -187,7 +212,7 @@
     CGRect tmpContentRect = self.mainPageController.view.frame;
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
-        NSLog(@" start →　%@",NSStringFromCGPoint(point));
+//        NSLog(@" start →　%@",NSStringFromCGPoint(point));
         
         originalMenuFrame = CGRectNull;
         originalContentFrame = CGRectNull;
@@ -202,7 +227,7 @@
     }
     
     else if (recognizer.state == UIGestureRecognizerStateChanged) {
-        NSLog(@" change →　%@",NSStringFromCGPoint(point));
+//        NSLog(@" change →　%@",NSStringFromCGPoint(point));
         
         tmpMenuRect.origin.x = originalMenuFrame.origin.x + point.x;
         tmpContentRect.origin.x = originalContentFrame.origin.x + point.x;
@@ -221,10 +246,10 @@
     }
     
     else if (recognizer.state == UIGestureRecognizerStateEnded) {
-        NSLog(@" end →　%@",NSStringFromCGPoint(point));
+//        NSLog(@" end →　%@",NSStringFromCGPoint(point));
         
-        NSLog(@"CGRectGetMidX(tmpMenuRect)/2 : %f",CGRectGetMidX(tmpMenuRect));
-        NSLog(@"CGRectGetMaxX(self.view.frame) : %f",CGRectGetMaxX(self.view.frame));
+//        NSLog(@"CGRectGetMidX(tmpMenuRect)/2 : %f",CGRectGetMidX(tmpMenuRect));
+//        NSLog(@"CGRectGetMaxX(self.view.frame) : %f",CGRectGetMaxX(self.view.frame));
         
         if (CGRectGetMidX(tmpMenuRect) > CGRectGetMaxX(self.view.frame)) {
             [self setPagesMenuOpen:NO];
@@ -255,47 +280,103 @@
 
 #pragma mark -
 #pragma mark Tag Menu PanGesture
-
 -(void)tagMenuPanGestureBegan:(UIPanGestureRecognizer *)recognizer
 {
+
+    if (mainViewBackGroundView == nil) {
+        mainViewBackGroundView = [[UIView alloc] initWithFrame:self.mainPageController.view.frame];
+        [mainViewBackGroundView setBackgroundColor:self.mainPageController.view.backgroundColor];
+        [self.mainPageController.view addSubview:mainViewBackGroundView];
+    }
     
-    if(mainViewSnapShot != nil)
-        return;
+    if (mainViewSnapShot == nil) {
+        mainViewSnapShot = [self pb_takeSnapshot:self.mainPageController.view];
+        [self.view addSubview:mainViewSnapShot];
+    }
+    mainViewSnapShot.alpha = 1;
     
+    [self reloadPagesMenuView:YES];
     
-    mainViewSnapShot = (UIImageView*)[self.mainPageController.view snapshotViewAfterScreenUpdates:NO];
-    [self.view addSubview:mainViewSnapShot];
-    
-    [self.mainPageController.view setBackgroundColor:[UIColor whiteColor]];
-    
+    [self makeSubViewsSnapShotImageInMainView];
 }
+
+- (UIImageView *)pb_takeSnapshot:(UIView*)view {
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, [UIScreen mainScreen].scale);
+    
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return [[UIImageView alloc] initWithImage:[image copy]];
+}
+
+-(void)makeSubViewsSnapShotImageInMainView
+{
+    KWPPagesMenuViewController *pagesMenuCV = (KWPPagesMenuViewController*)self.pagesMenuController;
+    
+    if (subViewsSnapshot) {
+        [subViewsSnapshot removeFromSuperview];
+        subViewsSnapshot = nil;
+    }
+    
+    subViewsSnapshot = [[UIView alloc] initWithFrame:self.view.frame];
+    [subViewsSnapshot setBackgroundColor:[UIColor clearColor]];
+    for (int i = 0; i < pagesMenuCV.tagCount; i++) {
+        
+        UIView *tmpView =[[pagesMenuCV.pageViews objectAtIndex:i].view snapshotViewAfterScreenUpdates:NO];
+        CGRect tmpFrame = tmpView.frame;
+        
+        tmpFrame.origin.x = (CGRectGetWidth(pagesMenuCV.view.frame)/(pagesMenuCV.tagCount+1)) * (i+1);
+        tmpFrame.origin.y = [pagesMenuCV subPageViewY:i];
+        
+        tmpView.frame = tmpFrame;
+        
+        if (tmpView != nil) {
+            if (i != self.selectedPageNum) {
+                 [subViewsSnapshot insertSubview:tmpView atIndex:0];
+            }
+           
+        }
+        
+    }
+    
+    [self.mainPageController.view addSubview:subViewsSnapshot];
+}
+
 
 -(void)tagMenuPanGestureChanged:(UIPanGestureRecognizer *)recognizer pagesMenuRect:(CGRect)pagesMenuRect mainViewRect:(CGRect)mainViewRect
 {
     KWPPagesMenuViewController *pagesMenuCV = (KWPPagesMenuViewController*)self.pagesMenuController;
     
     CGRect snapShotFrame = mainViewSnapShot.frame;
-    CGFloat calculateMainViewY =(-mainViewRect.origin.x)/((CGRectGetWidth(self.view.frame)/self.totalPer)* (self.maxMenuPer-self.minMenuPer));
-    calculateMainViewY *= [pagesMenuCV subPageViewY:0];
-    snapShotFrame.origin.y = calculateMainViewY;
-
     
-    UIView *tmpFirstView = [pagesMenuCV.pageViews firstObject].view;
+    CGFloat openPercent = (-mainViewRect.origin.x)/((CGRectGetWidth(self.view.frame)/self.totalPer)* (self.maxMenuPer-self.minMenuPer));
+    CGFloat calculateMainViewSnapshotY = openPercent * [pagesMenuCV subPageViewY:self.selectedPageNum];
+    snapShotFrame.origin.y = calculateMainViewSnapshotY;
     
+    UIView *tmpFirstView = [pagesMenuCV.pageViews objectAtIndex:self.selectedPageNum].view ;
     CGRect convertFrame = [self.view convertRect:self.view.frame fromView:tmpFirstView];
     
-    NSLog(@"convertFrame : %@", NSStringFromCGRect(convertFrame));
-    NSLog(@"convertFrame Max : %f",CGRectGetMaxX(convertFrame));
-    
-    if (CGRectGetMaxX(convertFrame) <= CGRectGetWidth(self.view.frame)) {
-        
-        snapShotFrame.origin.x = CGRectGetMaxX(convertFrame) - snapShotFrame.size.width ;
-        
+  
+    if ([self pagesMenuOpen]) {
+        mainViewSnapShot.alpha = 1 - openPercent;
+    }else{
+        mainViewSnapShot.alpha = openPercent;
     }
+
+    CGFloat calculateMainViewSnapshotX = CGRectGetMinX(tmpFirstView.frame) * openPercent;
+    snapShotFrame.origin.x =  calculateMainViewSnapshotX;
     
-//    [self.pagesMenuDelegate menuPanGestureStateChanged:recognizer];
+    NSLog(@"tmpFirstView %@",NSStringFromCGRect(tmpFirstView.frame));
+    NSLog(@"convertFrame %@",NSStringFromCGRect(convertFrame));
+    NSLog(@" ");
     
-    mainViewSnapShot.frame = snapShotFrame;
+    if(snapShotFrame.origin.x < 0)
+        mainViewSnapShot.frame = snapShotFrame;
+    
+    
+    
 }
 
 -(void)tagMenuPanGestureEnded:(UIPanGestureRecognizer *)recognizer{
@@ -304,21 +385,96 @@
     CGRect snapShotFrame = mainViewSnapShot.frame;
     
     if ([self pagesMenuOpen]) {
-        snapShotFrame.origin.x = (CGRectGetWidth(pagesMenuCV.view.frame)/(pagesMenuCV.tagCount+1)) * -pagesMenuCV.tagCount;
-        snapShotFrame.origin.y = [pagesMenuCV subPageViewY:0];
+        snapShotFrame.origin.x = (CGRectGetWidth(pagesMenuCV.view.frame)/(pagesMenuCV.tagCount+1)) * -(pagesMenuCV.tagCount-self.selectedPageNum);
+        snapShotFrame.origin.y = [pagesMenuCV subPageViewY:self.selectedPageNum];
     }else{
         snapShotFrame.origin.x = 0;
         snapShotFrame.origin.y = 0;
     }
     
+    
     [UIView animateWithDuration:.25f animations:^{
+       
+        if ([self pagesMenuOpen])
+            mainViewSnapShot.alpha = 0;
+        else
+            mainViewSnapShot.alpha = 1;
+        
         mainViewSnapShot.frame = snapShotFrame;
         
-//        [self.pagesMenuDelegate menuPanGestureStateEnded:recognizer];
     } completion:^(BOOL finished) {
-        
+    
+        [self reloadPagesMenuView:NO];
     }];
     
+}
+
+- (void) menuTapGesture:(UITapGestureRecognizer*)sender {
+    
+    CGPoint location = [sender locationInView:self.pagesMenuController.view];
+//    NSLog(@"location : %@",NSStringFromCGPoint(location));
+    
+    UIView *hitView = [self.pagesMenuController.view hitTest:location withEvent:UIEventTypeTouches ];
+    KWPPagesMenuViewController *pagesMenu = (KWPPagesMenuViewController*)self.pagesMenuController;
+    
+    for (UIViewController* tmp in pagesMenu.pageViews) {
+        if (tmp.view == hitView) {
+            [self setPagesMenuOpen:NO];
+            
+            [mainViewSnapShot removeFromSuperview];
+            mainViewSnapShot = nil;
+            
+            [mainViewBackGroundView removeFromSuperview];
+            mainViewBackGroundView = nil;
+
+            
+            self.selectedPageNum = [pagesMenu.pageViews indexOfObject:tmp];
+            
+            __block UIImageView *tmpImageView = [self pb_takeSnapshot:tmp.view];
+            NSLog(@"%@",NSStringFromCGRect([pagesMenu.pageViews objectAtIndex:self.selectedPageNum].view.frame));
+            tmpImageView.frame = [pagesMenu.pageViews objectAtIndex:self.selectedPageNum].view.frame;
+            [self.view addSubview:tmpImageView];
+            
+            [self setContentInMainView];
+            self.mainPageController.view.alpha = 0;
+            
+            [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                
+                tmpImageView.frame = self.view.frame;
+                [self layoutMultiView];
+                
+            } completion:^(BOOL finished) {
+                [tmpImageView removeFromSuperview];
+                tmpImageView = nil;
+                
+                self.mainPageController.view.alpha = 1;
+            }];
+            
+        }
+        
+        if (tmp.view == nil) {
+            NSLog(@"%@", [tmp description]);
+            NSLog(@"aaaaaaa %@",NSStringFromCGRect(tmp.view.frame));
+            
+        }
+    }
+    NSLog(@"self.selectedPageNum %ld",(long)self.selectedPageNum);
+    
+    return;
+    
+}
+
+#pragma mark -
+#pragma mark Reload PagesMenuView
+-(void)reloadPagesMenuView:(BOOL)gestureBegin
+{
+    [UIView animateWithDuration:0.2 animations:^{
+        KWPPagesMenuViewController *pagesMenu = (KWPPagesMenuViewController*)self.pagesMenuController;
+        [pagesMenu setPageViews:pagesMenu.pageViews];
+        [[pagesMenu.pageViews objectAtIndex:self.selectedPageNum].view setHidden:gestureBegin];
+        
+    }];
+
 }
 
 @end

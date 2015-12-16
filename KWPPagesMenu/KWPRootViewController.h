@@ -42,6 +42,8 @@
 @property (strong, readonly, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 
 
+@property NSInteger selectedPageNum;
+
 -(void)layoutMultiView;
 
 @end

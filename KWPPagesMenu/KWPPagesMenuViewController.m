@@ -8,6 +8,7 @@
 
 #import "KWPPagesMenuViewController.h"
 #import "PageSubViewHeaders.h"
+#import "KWPMainViewController.h"
 
 #define subviewY(num) self.pageMarginY * (self.tagCount - (num))
 #define subviewX(num) self.subviewW *  - (self.tagCount - (num))
@@ -53,7 +54,11 @@
     [pageSubViews addObject:[self.storyboard instantiateViewControllerWithIdentifier:@"PageSubViewC"]];
     [pageSubViews addObject:[self.storyboard instantiateViewControllerWithIdentifier:@"PageSubViewD"]];
     [pageSubViews addObject:[self.storyboard instantiateViewControllerWithIdentifier:@"PageSubViewE"]];
-
+    [pageSubViews addObject:[self.storyboard instantiateViewControllerWithIdentifier:@"PageSubViewA"]];
+    [pageSubViews addObject:[self.storyboard instantiateViewControllerWithIdentifier:@"PageSubViewB"]];
+    [pageSubViews addObject:[self.storyboard instantiateViewControllerWithIdentifier:@"PageSubViewC"]];
+    [pageSubViews addObject:[self.storyboard instantiateViewControllerWithIdentifier:@"PageSubViewD"]];
+    [pageSubViews addObject:[self.storyboard instantiateViewControllerWithIdentifier:@"PageSubViewE"]];
     [self setPageViews:pageSubViews];
 }
 
@@ -62,13 +67,15 @@
 
 -(CGFloat)subviewW
 {
-    return CGRectGetWidth(self.view.frame)/(self.tagCount+1);
+    KWPMainViewController *mainViewVC = (KWPMainViewController*)self.rootViewController.mainPageController;
+    
+    return CGRectGetWidth(mainViewVC.view.frame)/(self.tagCount+1);
 }
 
 -(NSInteger)tagCount
 {
     if (_tagCount == NonValue) {
-        _tagCount = 5;
+        _tagCount = 7;
     }
     
     return _tagCount;
@@ -123,8 +130,8 @@
     _pageViews = [[NSMutableArray<UIViewController *> alloc] init];
     self.datasource = [[NSMutableArray<id<KWPPagesMenuDatasource>> alloc] init];
     
-    for (int i = 0 ; i < [pageViews count]; i++) {
-       
+    for (int i = 0 ; i < self.tagCount; i++) {
+               
         CGFloat tmpX = subviewX(i);
         CGFloat tmpY = subviewY(i);
         
@@ -149,7 +156,9 @@
         [self addChildViewController:tmpCV];
         [_pageViews addObject:tmpCV];
         
-        tmpCV.view.frame = CGRectMake( tmpX, tmpY, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
+        KWPMainViewController *mainViewVC = (KWPMainViewController*)self.rootViewController.mainPageController;
+        
+        tmpCV.view.frame = CGRectMake( tmpX, tmpY, CGRectGetWidth(mainViewVC.view.frame), CGRectGetHeight(mainViewVC.view.frame));
         
         //    NSLog(@" Content %@",NSStringFromCGRect(_contentController.view.frame));
         tmpCV.view.clipsToBounds = YES;
@@ -175,5 +184,6 @@
 {
 
 }
+
 
 @end

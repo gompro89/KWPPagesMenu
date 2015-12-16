@@ -59,5 +59,43 @@
 
 }
 
+#pragma mark -
+#pragma mark set ContentView
+
+
+- (void)setContentViewController:(UIViewController *)contentViewController
+{
+    [self.view layoutIfNeeded];
+    
+    if (_contentViewController) {
+        [_contentViewController willMoveToParentViewController:nil];
+        [_contentViewController removeFromParentViewController];
+        [_contentViewController.view removeFromSuperview];
+    }
+    
+    _contentViewController = contentViewController;
+    
+    if (!_contentViewController)
+        return;
+    
+//    id<KWPMainViewDelegate> mainViewDelegate = (id<KWPMainViewDelegate>)_contentViewController;
+//    _contentDelegate = mainViewDelegate;
+    
+    [self addChildViewController:_contentViewController];
+//    _contentViewController.view.frame = [_contentDelegate viewSize];
+    _contentViewController.view.frame = [self viewSize];
+    
+    //    NSLog(@" Content %@",NSStringFromCGRect(_contentController.view.frame));
+    _contentViewController.view.clipsToBounds = YES;
+    
+    [self.view addSubview:_contentViewController.view];
+    [_contentViewController didMoveToParentViewController:self];
+    
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+    }
+}
+
+
 
 @end

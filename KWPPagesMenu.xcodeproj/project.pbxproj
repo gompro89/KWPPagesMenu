@@ -15,7 +15,6 @@
 		DB194CBF1C191DFD0085E220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB194CBD1C191DFD0085E220 /* LaunchScreen.storyboard */; };
 		DB194CCA1C191DFE0085E220 /* KWPPagesMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CC91C191DFE0085E220 /* KWPPagesMenuTests.m */; };
 		DB194CD51C191DFE0085E220 /* KWPPagesMenuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CD41C191DFE0085E220 /* KWPPagesMenuUITests.m */; };
-		DB194CE51C191E720085E220 /* KWPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CE41C191E720085E220 /* KWPRootViewController.m */; };
 		DB194CE81C1922160085E220 /* UIViewController+KWPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CE71C1922160085E220 /* UIViewController+KWPRootViewController.m */; };
 		DB194CF31C193F8C0085E220 /* KWPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CF21C193F8C0085E220 /* KWPMainViewController.m */; };
 		DB194CF61C193FB80085E220 /* KWPPagesMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CF51C193FB80085E220 /* KWPPagesMenuViewController.m */; };
@@ -24,6 +23,7 @@
 		DB61B80F1C1ABC390081F311 /* PageSubViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB61B80E1C1ABC390081F311 /* PageSubViewC.m */; };
 		DB61B8121C1ABC450081F311 /* PageSubViewD.m in Sources */ = {isa = PBXBuildFile; fileRef = DB61B8111C1ABC450081F311 /* PageSubViewD.m */; };
 		DB61B8151C1ABC540081F311 /* PageSubViewE.m in Sources */ = {isa = PBXBuildFile; fileRef = DB61B8141C1ABC540081F311 /* PageSubViewE.m */; };
+		DBB8B8341C1F9CC400173D7D /* KWPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB194CE41C191E720085E220 /* KWPRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,7 +275,7 @@
 		DB194CA41C191DFD0085E220 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = KWP;
 				TargetAttributes = {
 					DB194CAB1C191DFD0085E220 = {
@@ -344,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBB8B8341C1F9CC400173D7D /* KWPRootViewController.m in Sources */,
 				DB61B8151C1ABC540081F311 /* PageSubViewE.m in Sources */,
 				DB194CB71C191DFD0085E220 /* ViewController.m in Sources */,
 				DB61B8121C1ABC450081F311 /* PageSubViewD.m in Sources */,
@@ -355,7 +356,6 @@
 				DB61B80C1C1ABC2A0081F311 /* PageSubViewB.m in Sources */,
 				DB194CF31C193F8C0085E220 /* KWPMainViewController.m in Sources */,
 				DB61B80F1C1ABC390081F311 /* PageSubViewC.m in Sources */,
-				DB194CE51C191E720085E220 /* KWPRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,8 +497,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = KWPPagesMenu/PrefixHeader.pch;
 				INFOPLIST_FILE = KWPPagesMenu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kwp.KWPPagesMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -511,7 +512,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = KWPPagesMenu/PrefixHeader.pch;
 				INFOPLIST_FILE = KWPPagesMenu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kwp.KWPPagesMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
